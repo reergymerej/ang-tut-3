@@ -10,11 +10,7 @@ angular.module('myApp.controllers', [])
   	'cardService', 
 
   	function ($scope, cardService) {
-
-	  	$scope.card = { fake: 'card' };
-
-	  	console.log(cardService);
-
+	  	$scope.card = cardService;
   	}])
 
   .controller('MyCtrl2', [function() {
