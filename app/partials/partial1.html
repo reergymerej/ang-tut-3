@@ -1,4 +1,14 @@
-<p>This is the partial for view 1.</p>
-<p>card: {{ card | json }}</p>
-<p>card: {{ card | json }}</p>
-<p>card: {{ card | json }}</p>
+<ul>
+	<li ng-repeat="card in deck.cards">{{card.value}} ({{card.suit}})</li>
+</ul>
+
+<ul>
+	<li ng-repeat="card in deck2.cards">{{card.value}} ({{card.suit}})</li>
+</ul>
+
+<ul>
+	<li ng-repeat="card in deck3.cards">{{card.value}} ({{card.suit}})</li>
+</ul>
+
+<button ng-click="shuffle()">shuffle deck</button>
+<button ng-click="shuffle(deck3)">shuffle deck</button>

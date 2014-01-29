@@ -49,10 +49,10 @@ Refresh and you'll see Angular complain.
 
 ### Create the service
 
-In <code>/app/js/services.js</code>, add a definition for our service.  We do this with the <code>factory</code> method.
+In <code>/app/js/services.js</code>, add a definition for our service.  We do this with the <code>service</code> method.  Yeah, it's not what you would normally think of as a service, it's just what Angular uses to define dependencies.
 
-    .factory(
-      // factory name
+    .service(
+      // service name
       'cardService',
 
       // provider function, responsible for creating instances
@@ -62,3 +62,7 @@ In <code>/app/js/services.js</code>, add a definition for our service.  We do th
     )
 
 Now when we view our page, we see the data from our service, injected into our model, and plugged into the view.
+
+## How do I create useful models - constructors, prototypes, etc?
+
+### Passing Arguments to Service

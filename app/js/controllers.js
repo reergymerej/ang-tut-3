@@ -10,7 +10,14 @@ angular.module('myApp.controllers', [])
   	'cardService', 
   	
   	function ($scope, cardService) {
-	  	$scope.card = cardService;
+      $scope.deck = new cardService.Deck();
+      $scope.deck2 = new cardService.Deck();
+      $scope.deck3 = new cardService.Deck();
+
+      $scope.shuffle = function (deck) {
+        deck = deck || this.deck;
+        deck.shuffle();
+      };
   	}])
 
   .controller('MyCtrl2', [function() {
