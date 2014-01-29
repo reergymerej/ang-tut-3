@@ -15,6 +15,7 @@ angular.module('myApp.services', [])
 
   	// provider function
   	function () {
+  		console.log('provider executed');
   		return { isACard: true };
   	}
   );
