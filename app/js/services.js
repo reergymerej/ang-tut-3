@@ -17,6 +17,7 @@ angular.module('myApp.services', [])
       function Card (value, suit) {
         this.suit = String(suit).toLowerCase();
         this.value = String(value).toUpperCase();
+        this.faceDown = false;
 
         if (!this.isValid()) {
           throw new Error('This is not a valid card: ' + value + suit);
@@ -53,6 +54,10 @@ angular.module('myApp.services', [])
         return this.values.indexOf(this.value);
       };
 
+      Card.prototype.flip = function () {
+        this.faceDown = !this.faceDown;
+      };
+
       // =========================================
 
       function rand (min, max) {
@@ -87,10 +92,31 @@ angular.module('myApp.services', [])
         return this.cards;
       };
 
+      Deck.prototype.draw = function () {
+        return this.cards.pop();
+      };
 
+      // ================================================
+
+      function Stack () {
+        this.cards = [];
+      }
+
+      Stack.prototype.add = function (card) {
+        this.cards.push(card);
+      };
+
+      Stack.prototype.draw = function () {
+        return this.cards.pop();
+      };
+
+      Stack.prototype.count = function () {
+        return this.cards.length;
+      };
 
       return {
-        Deck: Deck
+        Deck: Deck,
+        Stack: Stack
       };
     }
   );

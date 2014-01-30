@@ -28,3 +28,50 @@
   content: "";
   padding: 0;
 }
+
+table td {
+  vertical-align: top;
+}
+
+.deck {
+  font-size: .8em;
+}
+
+.card {
+  width: 127px;
+  height: 133px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  position: relative;
+}
+
+.back {
+  background: red url(../img/card-back.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.empty {
+  display: none;
+}
+
+.suit {
+  /*position: absolute;*/
+  float: left;
+  width: 32px;
+  height: 32px;
+  background-image: url(../img/suits.gif);
+  background-repeat: no-repeat;
+}
+
+.heart {
+  background-position: -32px 0px;
+}
+
+.diamond {
+  background-position: 0px -32px;
+}
+
+.spade {
+  background-position: -32px -32px;
+}

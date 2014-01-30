@@ -1,14 +1,52 @@
-<ul>
-	<li ng-repeat="card in deck.cards">{{card.value}} ({{card.suit}})</li>
-</ul>
 
-<ul>
-	<li ng-repeat="card in deck2.cards">{{card.value}} ({{card.suit}})</li>
-</ul>
+<table>
+  <tr>
+    <td>
+      <button ng-click="shuffle()">shuffle deck</button>
+      <ul class="deck">
+        <li ng-repeat="card in deck.cards">{{card.value}} ({{card.suit}})</li>
+      </ul>
+    </td>
 
-<ul>
-	<li ng-repeat="card in deck3.cards">{{card.value}} ({{card.suit}})</li>
-</ul>
-
-<button ng-click="shuffle()">shuffle deck</button>
-<button ng-click="shuffle(deck3)">shuffle deck</button>
+    <td>
+      <button ng-click="deal()">deal</button>
+      <button ng-click="war()">war!</button>
+      <table>
+        <tr>
+          <td>
+            <div class="card back {{ !drawStack1.count() ? 'empty' : '' }}">{{ drawStack1.count() }}</div>
+          </td>
+          <td>
+            <div class="card {{ !card1 ? 'empty' : '' }}">
+              <span class="suit {{ card1.suit }}"></span>
+              {{ card1.value }}
+            </div>
+          </td>
+          <td>
+            <div class="card back {{ !wonStack1.count() ? 'empty' : '' }}">{{ wonStack1.count() }}</div>
+          </td>
+          <td>
+            total: {{ drawStack1.count() + wonStack1.count() }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="card back {{ !drawStack2.count() ? 'empty' : '' }}">{{ drawStack2.count() }}</div>
+          </td>
+          <td>
+            <div class="card {{ !card2 ? 'empty' : '' }}">
+              <span class="suit {{ card2.suit }}"></span>
+              {{ card2.value }}
+            </div>
+          </td>
+          <td>
+            <div class="card back {{ !wonStack2.count() ? 'empty' : '' }}">{{ wonStack2.count() }}</div>
+          </td>
+          <td>
+            total: {{ drawStack2.count() + wonStack2.count() }}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
